@@ -25,7 +25,6 @@
             font-size: 16px;
             color: #aaa;
         }
-
         .banner {
             width: 100%;
             max-height: 400px;
@@ -35,7 +34,6 @@
             width: 100%;
             object-fit: cover;
         }
-
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -43,12 +41,10 @@
             margin: auto;
             padding: 20px;
         }
-
         .main-content {
             flex: 2 1 700px;
             margin-right: 20px;
         }
-
         .sidebar {
             flex: 1 1 300px;
             background-color: #1f1f1f;
@@ -56,27 +52,22 @@
             border-radius: 8px;
             height: fit-content;
         }
-
         h2 {
             border-bottom: 2px solid #333;
             padding-bottom: 5px;
             margin-top: 30px;
         }
-
         .description p, .storyline p {
             line-height: 1.6;
             font-size: 16px;
         }
-
         .features ul, .system-requirements ul, .achievements ul, .reviews ul {
             list-style-type: square;
             padding-left: 20px;
         }
-
         .buttons {
             margin-top: 20px;
         }
-
         .buttons a {
             display: inline-block;
             text-decoration: none;
@@ -88,16 +79,13 @@
             margin-right: 15px;
             transition: 0.3s;
         }
-
         .buttons a:hover {
             background-color: #ff2a3a;
         }
-
         .buttons a.disabled {
             background-color: #555;
             cursor: not-allowed;
         }
-
         .screenshots {
             display: flex;
             flex-wrap: wrap;
@@ -116,7 +104,6 @@
             color: #aaa;
             margin-top: 5px;
         }
-
         .tags span {
             display: inline-block;
             background-color: #333;
@@ -125,27 +112,21 @@
             margin: 5px 5px 0 0;
             font-size: 14px;
         }
-
         .system-requirements h3, .achievements h3, .reviews h3 {
             margin-top: 0;
         }
-
         .video-container {
             margin-top: 20px;
             text-align: center;
         }
-        .video-container iframe {
+        .video-container video {
             width: 100%;
             max-width: 800px;
-            height: 450px;
-            border: none;
             border-radius: 8px;
         }
-
         .achievements, .reviews, .awards, .whats-new, .storyline {
             margin-top: 20px;
         }
-
         footer {
             margin-top: 50px;
             text-align: center;
@@ -153,7 +134,6 @@
             background-color: #171717;
             color: #888;
         }
-
         @media (max-width: 900px) {
             .container {
                 flex-direction: column;
@@ -164,7 +144,7 @@
             .screenshots img {
                 width: 100%;
             }
-            .video-container iframe {
+            .video-container video {
                 height: 250px;
             }
         }
@@ -175,47 +155,25 @@
         <h1>World's Ending Song</h1>
         <p>Bullet Hell Action | Released 2025 | Developer: Your Name</p>
     </header>
-
-    <!-- Banner -->
     <div class="banner">
         <img src="TEST1.jpg" alt="Game Banner">
     </div>
-
     <div class="container">
-        <!-- Main Content -->
         <div class="main-content">
-
-            <!-- Description -->
             <div class="description">
                 <h2>About the Game</h2>
-                <p>
-                    World's Ending Song is an intense bullet-hell game that tests your reflexes
-                    and strategy. Navigate through hordes of enemies, face epic bosses, and unravel
-                    a captivating storyline. Stunning visuals and dynamic soundtrack immerse you
-                    in a post-apocalyptic world.
-                </p>
+                <p>World's Ending Song is an intense bullet-hell game that tests your reflexes and strategy. Navigate through hordes of enemies, face epic bosses, and unravel a captivating storyline. Stunning visuals and dynamic soundtrack immerse you in a post-apocalyptic world.</p>
             </div>
-
-            <!-- Storyline -->
             <div class="storyline">
                 <h2>Storyline</h2>
-                <p>
-                    In a world on the brink of collapse, music becomes the last weapon against chaos.
-                    You are the final songstress fighting hordes of corrupted creatures,
-                    using rhythm, timing, and skill to restore harmony. 
-                </p>
-                <p>
-                    Chapters:
-                    <ul>
-                        <li>Chapter 1: Awakening - Discover your powers and first enemies.</li>
-                        <li>Chapter 2: The Journey - Explore ruined cities and challenging levels.</li>
-                        <li>Chapter 3: The Orchestral Battle - Face epic bosses with unique attack patterns.</li>
-                        <li>Chapter 4: Finale - Restore balance to the world and achieve harmony.</li>
-                    </ul>
-                </p>
+                <p>In a world on the brink of collapse, music becomes the last weapon against chaos. You are the final songstress fighting hordes of corrupted creatures, using rhythm, timing, and skill to restore harmony.</p>
+                <ul>
+                    <li>Chapter 1: Awakening - Discover your powers and first enemies.</li>
+                    <li>Chapter 2: The Journey - Explore ruined cities and challenging levels.</li>
+                    <li>Chapter 3: The Orchestral Battle - Face epic bosses with unique attack patterns.</li>
+                    <li>Chapter 4: Finale - Restore balance to the world and achieve harmony.</li>
+                </ul>
             </div>
-
-            <!-- Features -->
             <div class="features">
                 <h2>Key Features</h2>
                 <ul>
@@ -228,8 +186,6 @@
                     <li>Achievements and hidden secrets throughout the game</li>
                 </ul>
             </div>
-
-            <!-- What's New -->
             <div class="whats-new">
                 <h2>What's New</h2>
                 <ul>
@@ -239,8 +195,6 @@
                     <li>Bug fixes and gameplay improvements</li>
                 </ul>
             </div>
-
-            <!-- Tags -->
             <div class="tags">
                 <h2>Tags</h2>
                 <span>Action</span>
@@ -250,44 +204,24 @@
                 <span>Strategy</span>
                 <span>Adventure</span>
             </div>
-
-            <!-- Buttons -->
             <div class="buttons">
-                <!-- Full Game Download Disabled -->
                 <a href="#" class="disabled">Download Full Game (Coming Soon)</a>
-
-                <!-- Play Demo Available -->
                 <a href="bullet-hell-game-demo.yyz" download>Play Demo</a>
             </div>
-
-            <!-- Trailer Video -->
             <div class="video-container">
                 <h2>Trailer</h2>
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+                <video controls>
+                    <source src="trailer.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
-
-            <!-- Screenshots -->
             <h2>Screenshots</h2>
             <div class="screenshots">
-                <div>
-                    <img src="TEST1.jpg" alt="Screenshot 1">
-                    <span>Stage 1</span>
-                </div>
-                <div>
-                    <img src="TEST2.jpg" alt="Screenshot 2">
-                    <span>Stage 2</span>
-                </div>
-                <div>
-                    <img src="TEST3.jpg" alt="Screenshot 3">
-                    <span>Boss Fight</span>
-                </div>
-                <div>
-                    <img src="TEST5.jpg" alt="Screenshot 4">
-                    <span>Power-ups</span>
-                </div>
+                <div><img src="TEST1.jpg" alt="Screenshot 1"><span>Stage 1</span></div>
+                <div><img src="TEST2.jpg" alt="Screenshot 2"><span>Stage 2</span></div>
+                <div><img src="TEST3.jpg" alt="Screenshot 3"><span>Boss Fight</span></div>
+                <div><img src="TEST5.jpg" alt="Screenshot 4"><span>Power-ups</span></div>
             </div>
-
-            <!-- Achievements -->
             <div class="achievements">
                 <h2>Achievements</h2>
                 <ul>
@@ -297,8 +231,6 @@
                     <li>Secret Melody: Discover hidden power-up</li>
                 </ul>
             </div>
-
-            <!-- Reviews -->
             <div class="reviews">
                 <h2>Community Reviews</h2>
                 <ul>
@@ -308,8 +240,6 @@
                     <li>"Can't wait for the full version!" - BetaTester</li>
                 </ul>
             </div>
-
-            <!-- System Requirements -->
             <div class="system-requirements">
                 <h2>System Requirements</h2>
                 <h3>Minimum:</h3>
@@ -329,14 +259,11 @@
                     <li>Storage: 1 GB available space</li>
                 </ul>
             </div>
-
         </div>
-
-        <!-- Sidebar -->
         <div class="sidebar">
             <h2>Game Info</h2>
             <p><strong>Developer:</strong> Your Name</p>
             <p><strong>Publisher:</strong> Your Name</p>
             <p><strong>Release Date:</strong> 2025</p>
-            <p><strong>Genres:</strong> Action
-
+            <p><strong>Genres:</strong> Action, Bullet Hell, Indie</p>
+            <p><strong>Languages:</strong> English</
