@@ -50,7 +50,7 @@
         }
 
         .sidebar {
-            flex: 1 1 250px;
+            flex: 1 1 300px;
             background-color: #1f1f1f;
             padding: 20px;
             border-radius: 8px;
@@ -68,7 +68,7 @@
             font-size: 16px;
         }
 
-        .features ul, .system-requirements ul {
+        .features ul, .system-requirements ul, .achievements ul, .reviews ul {
             list-style-type: square;
             padding-left: 20px;
         }
@@ -126,15 +126,24 @@
             font-size: 14px;
         }
 
-        .system-requirements h3 {
+        .system-requirements h3, .achievements h3, .reviews h3 {
             margin-top: 0;
         }
 
-        .awards {
+        .video-container {
             margin-top: 20px;
-            background-color: #1f1f1f;
-            padding: 15px;
-            border-radius: 5px;
+            text-align: center;
+        }
+        .video-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .achievements, .reviews, .awards, .whats-new, .storyline {
+            margin-top: 20px;
         }
 
         footer {
@@ -155,6 +164,9 @@
             .screenshots img {
                 width: 100%;
             }
+            .video-container iframe {
+                height: 250px;
+            }
         }
     </style>
 </head>
@@ -172,13 +184,14 @@
     <div class="container">
         <!-- Main Content -->
         <div class="main-content">
+
             <!-- Description -->
             <div class="description">
                 <h2>About the Game</h2>
                 <p>
-                    World's Ending Song is an intense bullet-hell game that challenges your reflexes
+                    World's Ending Song is an intense bullet-hell game that tests your reflexes
                     and strategy. Navigate through hordes of enemies, face epic bosses, and unravel
-                    a captivating storyline. Stunning visuals and a dynamic soundtrack immerse you
+                    a captivating storyline. Stunning visuals and dynamic soundtrack immerse you
                     in a post-apocalyptic world.
                 </p>
             </div>
@@ -189,8 +202,16 @@
                 <p>
                     In a world on the brink of collapse, music becomes the last weapon against chaos.
                     You are the final songstress fighting hordes of corrupted creatures,
-                    using rhythm, timing, and skill to restore harmony. Can you survive
-                    the ultimate bullet-hell symphony?
+                    using rhythm, timing, and skill to restore harmony. 
+                </p>
+                <p>
+                    Chapters:
+                    <ul>
+                        <li>Chapter 1: Awakening - Discover your powers and first enemies.</li>
+                        <li>Chapter 2: The Journey - Explore ruined cities and challenging levels.</li>
+                        <li>Chapter 3: The Orchestral Battle - Face epic bosses with unique attack patterns.</li>
+                        <li>Chapter 4: Finale - Restore balance to the world and achieve harmony.</li>
+                    </ul>
                 </p>
             </div>
 
@@ -201,9 +222,21 @@
                     <li>Fast-paced bullet-hell action with responsive controls</li>
                     <li>Multiple challenging levels and epic boss battles</li>
                     <li>Dynamic soundtrack that changes per stage</li>
-                    <li>Unique power-ups and abilities to unlock</li>
+                    <li>Unlockable abilities and power-ups</li>
                     <li>High-score system to compete with friends</li>
                     <li>Stunning post-apocalyptic graphics and animations</li>
+                    <li>Achievements and hidden secrets throughout the game</li>
+                </ul>
+            </div>
+
+            <!-- What's New -->
+            <div class="whats-new">
+                <h2>What's New</h2>
+                <ul>
+                    <li>Added new boss fights and stages</li>
+                    <li>Improved graphics and particle effects</li>
+                    <li>Enhanced soundtrack and sound effects</li>
+                    <li>Bug fixes and gameplay improvements</li>
                 </ul>
             </div>
 
@@ -215,12 +248,19 @@
                 <span>Indie</span>
                 <span>Singleplayer</span>
                 <span>Strategy</span>
+                <span>Adventure</span>
             </div>
 
             <!-- Buttons -->
             <div class="buttons">
                 <a href="bullet-hell-game.yyz" download>Download Game</a>
                 <a href="#" class="disabled">Play Demo (Coming Soon)</a>
+            </div>
+
+            <!-- Trailer Video -->
+            <div class="video-container">
+                <h2>Trailer</h2>
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
             </div>
 
             <!-- Screenshots -->
@@ -244,43 +284,34 @@
                 </div>
             </div>
 
-            <!-- System Requirements -->
-            <div class="system-requirements">
-                <h2>System Requirements</h2>
+            <!-- Achievements -->
+            <div class="achievements">
+                <h2>Achievements</h2>
                 <ul>
-                    <li><strong>OS:</strong> Windows 10 or higher</li>
-                    <li><strong>Processor:</strong> Intel i5 / AMD Ryzen 5 or better</li>
-                    <li><strong>Memory:</strong> 4 GB RAM</li>
-                    <li><strong>Graphics:</strong> Intel HD Graphics 5000 / NVIDIA GTX 660 or better</li>
-                    <li><strong>Storage:</strong> 500 MB available space</li>
+                    <li>First Song: Complete Chapter 1</li>
+                    <li>Rhythm Master: Survive a stage without taking damage</li>
+                    <li>Harmony Restored: Complete all chapters</li>
                 </ul>
             </div>
 
-            <!-- Awards / Notes -->
-            <div class="awards">
-                <h2>Notes & Awards</h2>
-                <p>Currently in Early Access. Full version coming soon with more levels and features!</p>
-                <p>Awarded "Best Indie Bullet-Hell Concept 2025" by GameAwardsX.</p>
+            <!-- Reviews -->
+            <div class="reviews">
+                <h2>Community Reviews</h2>
+                <ul>
+                    <li>"Amazing gameplay and music!" - Player123</li>
+                    <li>"Challenging but very rewarding." - IndieFan</li>
+                    <li>"Bullet-hell perfection, love the soundtrack!" - GamerX</li>
+                </ul>
             </div>
-        </div>
 
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <h2>Game Info</h2>
-            <p><strong>Developer:</strong> Your Name</p>
-            <p><strong>Publisher:</strong> Your Name</p>
-            <p><strong>Release Date:</strong> 2025</p>
-            <p><strong>Genres:</strong> Action, Bullet Hell, Indie</p>
-            <p><strong>Languages:</strong> English</p>
-            <p><strong>Platforms:</strong> Windows</p>
-            <p><strong>Tags:</strong> Singleplayer, Fast-Paced, Challenging</p>
-        </div>
-    </div>
-
-    <footer>
-        &copy; 2025 World's Ending Song | All rights reserved
-    </footer>
-</body>
-</html>
-
+            <!-- System Requirements -->
+            <div class="system-requirements">
+                <h2>System Requirements</h2>
+                <h3>Minimum:</h3>
+                <ul>
+                    <li>OS: Windows 10</li>
+                    <li>Processor: Intel i3 / AMD equivalent</li>
+                    <li>Memory: 4 GB RAM</li>
+                    <li>Graphics: Intel HD 5000 / NVIDIA GTX 650</li>
+                   
 
