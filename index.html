@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>World's Ending Song - Steam Style</title>
+    <title>World's Ending Song</title>
     <style>
         body {
             margin: 0;
@@ -25,72 +25,42 @@
             font-size: 16px;
             color: #aaa;
         }
-        .banner {
-            width: 100%;
-            max-height: 400px;
-            overflow: hidden;
-        }
-        .banner img {
-            width: 100%;
-            object-fit: cover;
-        }
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: auto;
             padding: 20px;
-        }
-        .main-content {
-            flex: 2 1 700px;
-            margin-right: 20px;
-        }
-        .sidebar {
-            flex: 1 1 300px;
-            background-color: #1f1f1f;
-            padding: 20px;
-            border-radius: 8px;
-            height: fit-content;
         }
         h2 {
             border-bottom: 2px solid #333;
             padding-bottom: 5px;
             margin-top: 30px;
         }
-        .description p, .storyline p {
+        .description p {
             line-height: 1.6;
             font-size: 16px;
         }
-        .features ul, .system-requirements ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
-        .buttons {
-            margin-top: 20px;
-        }
-        .buttons a {
+        .tags span {
             display: inline-block;
-            text-decoration: none;
-            color: #fff;
-            background-color: #ff4b5c;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-right: 15px;
-            transition: 0.3s;
+            background-color: #333;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin: 5px 5px 0 0;
+            font-size: 14px;
         }
-        .buttons a:hover {
-            background-color: #ff2a3a;
+        .video-container {
+            margin-top: 20px;
+            text-align: center;
         }
-        .buttons a.disabled {
-            background-color: #555;
-            cursor: not-allowed;
+        .video-container video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 8px;
         }
         .screenshots {
             display: flex;
             flex-wrap: wrap;
-            margin-top: 20px;
             gap: 15px;
+            margin-top: 20px;
         }
         .screenshots img {
             width: calc(50% - 15px);
@@ -104,40 +74,7 @@
             color: #aaa;
             margin-top: 5px;
         }
-        .tags span {
-            display: inline-block;
-            background-color: #333;
-            padding: 5px 10px;
-            border-radius: 3px;
-            margin: 5px 5px 0 0;
-            font-size: 14px;
-        }
-        .system-requirements h3 {
-            margin-top: 0;
-        }
-        .video-container {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .video-container video {
-            width: 100%;
-            max-width: 800px;
-            border-radius: 8px;
-        }
-        footer {
-            margin-top: 50px;
-            text-align: center;
-            padding: 20px;
-            background-color: #171717;
-            color: #888;
-        }
-        @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-            }
-            .main-content {
-                margin-right: 0;
-            }
+        @media (max-width: 800px) {
             .screenshots img {
                 width: 100%;
             }
@@ -145,58 +82,66 @@
                 height: 250px;
             }
         }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #171717;
+            color: #888;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>World's Ending Song</h1>
-        <p>Bullet Hell Action | Released 2025 | Developer: Your Name</p>
+        <p>Bullet Hell Action | 2025 | Developer: Your Name</p>
     </header>
-    <div class="banner">
-        <img src="TEST1.jpg" alt="Game Banner">
-    </div>
     <div class="container">
-        <div class="main-content">
-            <div class="description">
-                <h2>About the Game</h2>
-                <p>World's Ending Song is an intense bullet-hell game that tests your reflexes and strategy. Navigate through hordes of enemies, face epic bosses, and unravel a captivating storyline. Stunning visuals and dynamic soundtrack immerse you in a post-apocalyptic world.</p>
+        <div class="description">
+            <h2>About the Game</h2>
+            <p>
+                World's Ending Song is an intense bullet-hell game that tests your reflexes and strategy. Navigate through hordes of enemies, face epic bosses, and enjoy stunning visuals and a dynamic soundtrack in a post-apocalyptic world.
+            </p>
+        </div>
+        <div class="tags">
+            <h2>Tags</h2>
+            <span>Action</span>
+            <span>Bullet Hell</span>
+            <span>Indie</span>
+            <span>Singleplayer</span>
+            <span>Adventure</span>
+            <span>Strategy</span>
+        </div>
+        <div class="video-container">
+            <h2>Trailer</h2>
+            <video controls>
+                <source src="trailer.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h2>Screenshots</h2>
+        <div class="screenshots">
+            <div>
+                <img src="TEST1.jpg" alt="Screenshot 1">
+                <span>Stage 1</span>
             </div>
-            
+            <div>
+                <img src="TEST2.jpg" alt="Screenshot 2">
+                <span>Stage 2</span>
             </div>
-            <div class="features">
-                <h2>Key Features</h2>
-                <ul>
-                    <li>Fast-paced bullet-hell action with responsive controls</li>
-                    <li>Multiple challenging levels and epic boss battles</li>
-                    <li>Dynamic soundtrack that changes per stage</li>
-                    <li>Unlockable abilities and power-ups</li>
-                    <li>High-score system to compete with friends</li>
-                    <li>Stunning post-apocalyptic graphics and animations</li>
-                </ul>
+            <div>
+                <img src="TEST3.jpg" alt="Screenshot 3">
+                <span>Boss Fight</span>
             </div>
-            <div class="tags">
-                <h2>Tags</h2>
-                <span>Action</span>
-                <span>Bullet Hell</span>
-                <span>Indie</span>
-                <span>Singleplayer</span>
-                <span>Strategy</span>
-                <span>Adventure</span>
+            <div>
+                <img src="TEST5.jpg" alt="Screenshot 4">
+                <span>Power-ups</span>
             </div>
-            <div class="buttons">
-                <a href="#" class="disabled">Download Full Game (Coming Soon)</a>
-                <a href="bullet-hell-game-demo.yyz" download>Play Demo</a>
-            </div>
-            <div class="video-container">
-                <h2>Trailer</h2>
-                <video controls>
-                    <source src="trailer.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <h2>Screenshots</h2>
-            <div class="screenshots">
-                <div><img src="TEST1.jpg" alt="Screenshot 1"><span>Stage 1</span></div>
-                <div><img src="TEST2.jpg" alt="Screenshot 2"><span>Stage 2</span></div>
-                <div><img src="TEST3.jpg" alt="Screenshot 3"><span>Boss Fight</span></div>
-                <div><img src="TEST5.jpg" alt="Screenshot 4"
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 World's Ending Song | All rights reserved
+    </footer>
+</body>
+</html>
+
