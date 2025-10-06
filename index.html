@@ -63,12 +63,12 @@
             margin-top: 30px;
         }
 
-        .description p {
+        .description p, .storyline p {
             line-height: 1.6;
             font-size: 16px;
         }
 
-        .features ul {
+        .features ul, .system-requirements ul {
             list-style-type: square;
             padding-left: 20px;
         }
@@ -88,8 +88,14 @@
             margin-right: 15px;
             transition: 0.3s;
         }
+
         .buttons a:hover {
             background-color: #ff2a3a;
+        }
+
+        .buttons a.disabled {
+            background-color: #555;
+            cursor: not-allowed;
         }
 
         .screenshots {
@@ -111,8 +117,24 @@
             margin-top: 5px;
         }
 
+        .tags span {
+            display: inline-block;
+            background-color: #333;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin: 5px 5px 0 0;
+            font-size: 14px;
+        }
+
         .system-requirements h3 {
             margin-top: 0;
+        }
+
+        .awards {
+            margin-top: 20px;
+            background-color: #1f1f1f;
+            padding: 15px;
+            border-radius: 5px;
         }
 
         footer {
@@ -154,9 +176,21 @@
             <div class="description">
                 <h2>About the Game</h2>
                 <p>
-                    World's Ending Song is an intense bullet-hell game that challenges your reflexes and strategy.
-                    Navigate through hordes of enemies, face epic bosses, and unravel a captivating storyline.
-                    Stunning visuals and a dynamic soundtrack immerse you in a post-apocalyptic world.
+                    World's Ending Song is an intense bullet-hell game that challenges your reflexes
+                    and strategy. Navigate through hordes of enemies, face epic bosses, and unravel
+                    a captivating storyline. Stunning visuals and a dynamic soundtrack immerse you
+                    in a post-apocalyptic world.
+                </p>
+            </div>
+
+            <!-- Storyline -->
+            <div class="storyline">
+                <h2>Storyline</h2>
+                <p>
+                    In a world on the brink of collapse, music becomes the last weapon against chaos.
+                    You are the final songstress fighting hordes of corrupted creatures,
+                    using rhythm, timing, and skill to restore harmony. Can you survive
+                    the ultimate bullet-hell symphony?
                 </p>
             </div>
 
@@ -166,16 +200,27 @@
                 <ul>
                     <li>Fast-paced bullet-hell action with responsive controls</li>
                     <li>Multiple challenging levels and epic boss battles</li>
-                    <li>Unique soundtrack for each stage</li>
-                    <li>Unlockable abilities and power-ups</li>
-                    <li>Replayable with high-score system</li>
+                    <li>Dynamic soundtrack that changes per stage</li>
+                    <li>Unique power-ups and abilities to unlock</li>
+                    <li>High-score system to compete with friends</li>
+                    <li>Stunning post-apocalyptic graphics and animations</li>
                 </ul>
+            </div>
+
+            <!-- Tags -->
+            <div class="tags">
+                <h2>Tags</h2>
+                <span>Action</span>
+                <span>Bullet Hell</span>
+                <span>Indie</span>
+                <span>Singleplayer</span>
+                <span>Strategy</span>
             </div>
 
             <!-- Buttons -->
             <div class="buttons">
                 <a href="bullet-hell-game.yyz" download>Download Game</a>
-                <a href="#">Play Demo</a>
+                <a href="#" class="disabled">Play Demo (Coming Soon)</a>
             </div>
 
             <!-- Screenshots -->
@@ -210,6 +255,13 @@
                     <li><strong>Storage:</strong> 500 MB available space</li>
                 </ul>
             </div>
+
+            <!-- Awards / Notes -->
+            <div class="awards">
+                <h2>Notes & Awards</h2>
+                <p>Currently in Early Access. Full version coming soon with more levels and features!</p>
+                <p>Awarded "Best Indie Bullet-Hell Concept 2025" by GameAwardsX.</p>
+            </div>
         </div>
 
         <!-- Sidebar -->
@@ -221,6 +273,7 @@
             <p><strong>Genres:</strong> Action, Bullet Hell, Indie</p>
             <p><strong>Languages:</strong> English</p>
             <p><strong>Platforms:</strong> Windows</p>
+            <p><strong>Tags:</strong> Singleplayer, Fast-Paced, Challenging</p>
         </div>
     </div>
 
