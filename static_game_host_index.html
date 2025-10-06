@@ -1,0 +1,199 @@
+<!--
+index.html
+Simple single-file static website to host and offer downloads for a GameMaker build.
+
+How to use:
+1. Put this file (index.html) in the same folder as your game build(s):
+   - For Windows builds: put your zip (e.g. mygame-windows.zip) or folder (zipped) next to this file.
+   - For HTML5 builds: put the exported HTML5 folder contents next to this file, OR point the iframe src to the game's HTML file (e.g. html5/index.html).
+2. Edit the DOWNLOAD_URL and EMBED_URL placeholders below to match your filenames.
+3. Host the folder on any static host (GitHub Pages, Netlify, Vercel, Firebase Hosting, or a plain web server).
+
+Notes:
+- This page is intentionally lightweight and dependency-free.
+- If you only have a Windows .exe, zip it with required data.win and other files and use DOWNLOAD_URL pointing to that zip.
+- For HTML5 games embed in the iframe (EMBED_URL), but many hosts restrict cross-origin/iframe — GitHub Pages or Netlify usually work.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Your Game — Play or Download</title>
+  <meta name="description" content="Download or play the game. Place your game files next to this index.html and edit the link placeholders.">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#96a0b3;--accent:#4f46e5;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:linear-gradient(180deg,#071025 0%, var(--bg) 100%);color:#e6eef8;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px}
+    .wrap{width:100%;max-width:980px}
+    header{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+    .logo{width:64px;height:64px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);font-weight:700;color:white;font-size:20px}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}
+    @media (max-width:880px){.grid{grid-template-columns:1fr;}.right{order:2}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    .muted{color:var(--muted);font-size:14px}
+
+    .download-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,var(--accent),#06b6d4);color:white;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+    .download-btn small{opacity:0.95}
+
+    .info-list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+    .info-list li{display:flex;gap:8px;align-items:center}
+    .pill{background:var(--glass);padding:6px 8px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+    .preview{height:420px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
+    iframe{width:100%;height:100%;border:0;background:#000}
+
+    footer{margin-top:14px;color:var(--muted);font-size:13px}
+
+    /* small helper UI */
+    .file-input{display:flex;gap:8px;align-items:center}
+    input[type="text"]{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
+    button{padding:8px 10px;border-radius:8px;border:0;background:rgba(255,255,255,0.04);color:inherit}
+    .note{font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">GM</div>
+      <div>
+        <h1>Your Game — Play or Download</h1>
+        <p class="lead">A tiny static website to host and offer downloads for your GameMaker build. Edit the links below to match your filenames.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main class="card">
+        <section aria-labelledby="play-title">
+          <h2 id="play-title" style="margin:0 0 8px">Play in browser (HTML5)</h2>
+          <p class="muted">If you exported an HTML5 build, set the embed URL so visitors can play directly here.</p>
+
+          <div class="preview" id="preview">
+            <!-- If EMBED_URL is valid and hosted, it will appear here. If not, the empty state will show -->
+            <iframe id="gameFrame" src="EMBED_URL_PLACEHOLDER" title="Play the game in-browser"></iframe>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+            <div style="flex:1">
+              <label class="note">Embed URL (relative or absolute)</label>
+              <input id="embedInput" type="text" placeholder="e.g. html5/index.html or https://example.com/html5/index.html" value="EMBED_URL_PLACEHOLDER">
+            </div>
+            <button id="embedBtn">Update</button>
+          </div>
+        </section>
+
+        <hr style="margin:18px 0;border:0;border-top:1px solid rgba(255,255,255,0.03)">
+
+        <section aria-labelledby="download-title">
+          <h2 id="download-title" style="margin:0 0 8px">Download (Windows / ZIP)</h2>
+          <p class="muted">Link to a zip or executable. Upload the file next to this page or host it elsewhere and put the URL below.</p>
+
+          <a id="downloadLink" class="download-btn" href="DOWNLOAD_URL_PLACEHOLDER" download>
+            ⤓ <small>Download game</small>
+          </a>
+
+          <ul class="info-list" style="margin-top:10px">
+            <li><span class="pill">File</span><span id="fileName" style="margin-left:8px">DOWNLOAD_URL_PLACEHOLDER</span></li>
+            <li><span class="pill">Size</span><span id="fileSize" style="margin-left:8px">—</span></li>
+            <li><span class="pill">License</span><span style="margin-left:8px" id="license">You own the game — include a README with credits</span></li>
+          </ul>
+
+          <div style="margin-top:12px" class="note">Tip: Zip your Windows build (exe + data.win + any dlls) into a single .zip to make downloads reliable.</div>
+        </section>
+
+        <footer>
+          <div class="muted">Deployment: Upload this folder to GitHub Pages, Netlify, or any static host. If embedding an HTML5 build, ensure the host serves the HTML files (GitHub Pages/Netlify do).</div>
+        </footer>
+      </main>
+
+      <aside class="right card">
+        <h3 style="margin-top:0">Quick setup</h3>
+        <ol class="muted">
+          <li>Place your files near this index.html.</li>
+          <li>Edit the <code>DOWNLOAD_URL</code> and <code>EMBED_URL</code> text inputs.</li>
+          <li>Commit and deploy the folder to a static host.</li>
+        </ol>
+
+        <div style="margin-top:12px">
+          <label class="note">Set download URL (relative is ok)</label>
+          <div class="file-input" style="margin-top:6px">
+            <input id="downloadInput" type="text" placeholder="e.g. mygame-windows.zip" value="DOWNLOAD_URL_PLACEHOLDER">
+            <button id="setDownload">Set</button>
+          </div>
+        </div>
+
+        <hr style="margin:14px 0;border:0;border-top:1px solid rgba(255,255,255,0.03)">
+
+        <div>
+          <h4 style="margin:0">Where to host</h4>
+          <p class="muted" style="margin-top:6px">Free, easy options:</p>
+          <ul class="muted">
+            <li>GitHub Pages — push the folder to a repo and enable Pages</li>
+            <li>Netlify / Vercel — drag-and-drop the folder or connect repo</li>
+            <li>itch.io pages — works well for indie game pages</li>
+          </ul>
+        </div>
+
+        <hr style="margin:12px 0;border:0;border-top:1px solid rgba(255,255,255,0.03)">
+        <div class="muted">
+          <strong>Security note:</strong>
+          Do not upload anything you don't want public. If you distribute an .exe, the host may flag it — consider zipping and including checksums in the README.
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // USER-FACING PLACEHOLDERS
+    // Edit these defaults in the file or with the inputs on the page after uploading
+    const downloadInput = document.getElementById('downloadInput');
+    const setDownload = document.getElementById('setDownload');
+    const downloadLink = document.getElementById('downloadLink');
+    const fileName = document.getElementById('fileName');
+    const fileSize = document.getElementById('fileSize');
+    const embedInput = document.getElementById('embedInput');
+    const embedBtn = document.getElementById('embedBtn');
+    const gameFrame = document.getElementById('gameFrame');
+
+    // initialize from placeholders already present in input values
+    function updateDownloadUI(url){
+      downloadLink.href = url;
+      fileName.textContent = url;
+      // Try to fetch HEAD for size (best-effort; may be blocked by CORS)
+      if(url && url !== 'DOWNLOAD_URL_PLACEHOLDER'){
+        fetch(url, {method: 'HEAD'}).then(r => {
+          const s = r.headers.get('content-length');
+          if(s) fileSize.textContent = Math.round(s/1024) + ' KB';
+          else fileSize.textContent = 'unknown';
+        }).catch(()=>{ fileSize.textContent = 'unknown (CORS or offline)'; });
+      } else { fileSize.textContent = '—'; }
+    }
+
+    function updateEmbed(url){
+      gameFrame.src = url;
+    }
+
+    // wire up buttons
+    setDownload.addEventListener('click', ()=>{
+      const v = downloadInput.value.trim();
+      if(!v){ alert('Enter a filename or URL for the download'); return; }
+      updateDownloadUI(v);
+    });
+
+    embedBtn.addEventListener('click', ()=>{
+      const v = embedInput.value.trim();
+      if(!v){ alert('Enter the HTML file URL to embed'); return; }
+      updateEmbed(v);
+    });
+
+    // initialize from current inputs (these contain the placeholder values)
+    updateDownloadUI(downloadInput.value||'DOWNLOAD_URL_PLACEHOLDER');
+    updateEmbed(embedInput.value||'EMBED_URL_PLACEHOLDER');
+  </script>
+</body>
+</html>
